@@ -1,8 +1,8 @@
+# PolyTest.py
 import pytest
-from Polynomial import Polynomial  # Import the Polynomial class from your module
+from Polynomial import Polynomial
 
-def test_init():
-    poly = Polynomial([3, 0, 2])
+def test_init(poly):
     assert poly.coefficients == [3, 0, 2]
 
 def test_str():
@@ -27,7 +27,7 @@ def test_sub():
     poly2 = Polynomial([1, -1])
 
     poly_diff = poly1 - poly2
-    assert poly_diff.coefficients == [3,-1, 3]
+    assert poly_diff.coefficients == [3, -1, 3]
 
 def test_mul():
     poly1 = Polynomial([3, 0, 2])
@@ -50,5 +50,8 @@ def test_third_degree_polynomial():
     poly = Polynomial([1, 0, -2, 0])  # Represents x^3 - 2x
     root = poly.find_root_bisection(-2, 2)
     assert abs(root - 0.0) < 1e-6
-   
 
+# ... other test functions ...
+
+if __name__ == "__main__":
+    pytest.main()
