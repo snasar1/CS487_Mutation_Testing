@@ -1,6 +1,10 @@
 # Tests/test_mutants.py
 import os
 import sys
+
+project_path = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+sys.path.append(project_path)
+
 import pickle
 import pytest
 from Polynomial import Polynomial
@@ -16,9 +20,6 @@ from Tests.PolyTest import (
     test_third_degree_polynomial,
 )
 
-# Add the project directory to the Python path
-project_path = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-sys.path.append(project_path)
 
 def apply_and_save_mutation(mutant_name, original_poly, mutation_func):
     mutated_poly = mutation_func(original_poly)
