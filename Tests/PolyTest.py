@@ -51,7 +51,6 @@ def test_third_degree_polynomial():
     root = poly.find_root_bisection(-2, 2)
     assert abs(root - 0.0) < 1e-6
 
-# ... other test functions ...
 
 if __name__ == "__main__":
     pytest.main()
